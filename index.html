@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b24f61bacb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <span class="wrapper">
+        <h2>PASSWORD GENERATOR</h2> 
+        <div class="showpass">
+            <input type="text" readonly placeholder="PASSWORD" id="password">
+            <!-- fail vala portion bhi dikha and try catch use kar -->
+            <span id="copied">copied!</span> 
+            <i class="fa-regular fa-copy icon copy-icon" onclick="copypassword()"></i>
+        </div>
+        <div class="choice-selector">
+            <div class="pass-len"><h3>Password Length</h3><span id="selectedNumber" >12</span></div>
+            <input type="range" name="length" id="length" min="4" max="20" oninput="showSelectedNumber()">
+            <div class="check">
+                <div class="inside-check"><input class="input-check" type="checkbox" name="Include Uppercase Letters" id="upper">Include Uppercase Letters </div>
+                <div class="inside-check"><input class="input-check" type="checkbox" name="Include Lowercase Letters" id="lower">Include Lowercase Letters </div>
+                <div class="inside-check"><input class="input-check" type="checkbox" name="Include Symbols" id="symbol">Include Symbols</div>
+                <div class="inside-check"><input class="input-check" type="checkbox" name="Include Numbers" id="number">Include Numbers </div>
+            </div>
+            <div class="strength-block"><div class="strength">Strength </div><div id="strength-color" strength-indicator></div></div>
+            <button class="gen-pass-button" onclick="generate_password()">Generate Password</button>
+        </div>
+        
+    </span>
+    <script src="script.js"></script>
+</body>
+</html>
